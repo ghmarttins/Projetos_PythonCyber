@@ -1,5 +1,15 @@
 import scapy.all as scapy
 from scapy.layers import http
+import argparse
+
+def pegar_informacoes():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--i", "-interface", dest="interface")
+
+    argumentos = parser.parse_args()
+    return argumentos.interface
+
+
 
 def sniffing(interface):
     scapy.sniff(iface=interface, store=False, prn=processar_pacote)
@@ -20,5 +30,5 @@ def processar_pacote(pacote):
                     break
 
 
-
-sniffing('eth0')
+interface = pegar_informacoes()
+sniffing(interface)
