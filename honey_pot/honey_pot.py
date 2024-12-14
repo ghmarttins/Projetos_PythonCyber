@@ -16,7 +16,8 @@ def iniciar_honeypot(endereco, porta):
         socket_cliente, endereco_cliente =  meu_socket.accept()
 
         print("Conexao vinda de: ", endereco_cliente)
-        logging.info("Conexao vinda de: ", endereco_cliente)
+        
+        logging.info(f"Conexao de {endereco_cliente}")
 
         socket_cliente.close()
 
