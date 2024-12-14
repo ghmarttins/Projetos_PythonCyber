@@ -13,6 +13,8 @@ print("Comecando Scan: ", ip_alvo)
 
 #Threading
 for i in range(50, 500):
+
+    
     #IPv4
     #TCP
     s = socket(AF_INET, SOCK_STREAM)
